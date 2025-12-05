@@ -4,25 +4,46 @@ public class exMatriz {
     // criar método
     static void criarMatriz(){
 
-        //criar matriz
-        int matriz[][] = new int[3][3];
-
-        //preencher a matriz
-        matriz[0][0] = 00; matriz[0][1] = 01; matriz[0][2] = 02;
-        matriz[1][0] = 10 ;matriz[1][1] = 11; matriz[1][2] = 12;
-        matriz[2][0]= 20;matriz[2][1] = 21; matriz[2][2] = 22;
-
-        //chamar matriz
-        for (int i = 0; i<matriz.length; i++) {
-            for (int j = 0; i<matriz.length; i++){
-                System.out.println(matriz[i][j]);
-            }
-            System.out.println();
-        }
+        //Método com linhas e colunas pedidas ao utilizador
+    
     }
 
+    static void CriarMatriz (int linhas, int colunas){
+
+        Scanner teclado = new Scanner (System.in);
+
+           //criar matriz com dados do user
+         int matriz[][] = new int[linhas][colunas];
+
+         //pedir ao user para inserir os dados 
+         for (int i = 0; i<matriz.length; i++) {
+            for (int j = 0; j<matriz.length; i++){
+                System.out.printf("Posição [%d][%d]: %n" ,i , j);
+                matriz [i][j] = teclado.nextInt(); 
+            }
+            System.out.println();
+
+            teclado.close();
+        }
+
+      }
+
+
     public static void main(String [] args){
-        criarMatriz();
+
+        //criar objeto scanner
+        Scanner teclado = new Scanner(System.in);
+
+        //Pedir linhas ao user 
+        System.out.println("Insira a quantidade de linhas: ");
+        int linhas = teclado.nextInt();
+        //Pedir colunas ao user 
+        System.out.println("Insira a quantidade de colunas");
+        int colunas = teclado.nextInt();
+
+        CriarMatriz(linhas, colunas);
+
+        teclado.close();
         
     }
 }
