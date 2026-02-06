@@ -1,22 +1,22 @@
-package exerciciosPoo;
+package exercicio32;
 
 public class Main {
     public static void main(String[] args) {
-        //Cria um objeto da classe Pessoa
-        Pessoa pessoa1 = new Pessoa();
+        Banco banco1 = new Banco();
 
-        //Dar sentido aos metodos da instancia para pessoa 1 
-        pessoa1.setIdade(22);
-        System.out.println("Obtém a idade da pessoa 1: " + pessoa1.getIdade());
-
-
-        Pessoa pessoa2 = new Pessoa();
-        //Dar sentido aos metodos para pessoa 2
-        pessoa2.setNome("Diego Lima");
-        System.out.println("Nome da pessoa 2: " + pessoa2.getNome());
-
-
+        System.out.println("Saldo inicial: " + banco1.obterSaldo());
         
+        banco1.definirSaldo(1000.0);
+        System.out.println("Saldo inicial: " + banco1.obterSaldo());
+
+        banco1.depositar(100.0);
+        System.out.println("Saldo inicial: " + banco1.obterSaldo());
+
+        banco1.levantar(900);
+        System.out.println("Saldo inicial: " + banco1.obterSaldo());
+
+
+
     }
     
 }
